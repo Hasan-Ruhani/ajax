@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Change Content</title>
+    </head>
+    <body>
+        <div id="demo">
+            <h1>AJAX is a developer's dream</h1>
+            <p><button onclick="loadData()">Change this Content</button></p>
+        </div>
+
+        <script>
+            function loadData(){
+                //creat a new request
+                const xhr = new XMLHttpRequest();
+
+                //what to do when respon arrives
+                xhr.onload = function(){
+                    const container = document.getElementById('demo');
+                    demo.innerHTML = xhr.responseText;
+                    // container.innerHTML = xhr.responseText;
+                };
+
+                //prepare request - method: GET, POST, PUT PATCH, DELETE, OPTIONS
+                //GET: When a data get from server
+                //POST: When a data go to server
+                //PUT/PATCH: When a data need update
+                //DELETE: When a data remove from server
+
+                xhr.open("GET", "./changeContentt.txt");
+
+                //send request
+                xhr.send();
+            }
+        </script>
+    </body>
+</html>
