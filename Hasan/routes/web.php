@@ -26,3 +26,5 @@ Route::get('/skillsData', [ResumeController::class,'skillsData']);
 Route::get('/languageData', [ResumeController::class,'languageData']);
 Route::post('/contactRequest', [ContactController::class,'contactRequest']);
 
+// this is first route
+
